@@ -83,6 +83,19 @@ final class MoneyComparator
     }
 
     /**
+     * @param Money  $a
+     * @param Money  $b
+     *
+     * @return bool
+     *
+     * @throws CurrencyConversionException If the exchange rate is not available.
+     */
+    public function isNotEqual(Money $a, Money $b) : bool
+    {
+        return !$this->isEqual($a, $b);
+    }
+
+    /**
      * @param Money $a
      * @param Money $b
      *

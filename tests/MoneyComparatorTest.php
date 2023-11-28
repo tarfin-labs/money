@@ -55,6 +55,7 @@ class MoneyComparatorTest extends AbstractTestCase
         self::assertSame($cmp <= 0, $comparator->isLessOrEqual($a, $b));
         self::assertSame($cmp >= 0, $comparator->isGreaterOrEqual($a, $b));
         self::assertSame($cmp === 0, $comparator->isEqual($a, $b));
+        self::assertSame($cmp !== 0, $comparator->isNotEqual($a, $b));
     }
 
     public static function providerCompare() : array
