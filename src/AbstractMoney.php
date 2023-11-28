@@ -139,6 +139,16 @@ abstract class AbstractMoney implements MoneyContainer, Stringable, JsonSerializ
     }
 
     /**
+     * Returns whether this money is not equal to the given amount.
+     *
+     * @throws \Brick\Money\Exception\MoneyMismatchException
+     */
+    final public function isNotEqualTo(AbstractMoney|BigNumber|int|float|string $that): bool
+    {
+        return !$this->getAmount()->isEqualTo($this->getAmountOf($that));
+    }
+
+    /**
      * Returns whether this money is less than the given amount.
      *
      * @throws MathException          If the argument is an invalid number.
